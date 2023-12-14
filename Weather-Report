@@ -1,0 +1,206 @@
+{
+    "info": {
+        "_postman_id": "25cde853-619e-40f2-98fe-4e911f2036ca",
+        "name": "OpenWeatherAPI",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "_exporter_id": "31715036"
+    },
+    "item": [
+        {
+            "name": "getcitynamebyname",
+            "event": [
+                {
+                    "listen": "prerequest",
+                    "script": {
+                        "exec": [
+                            "pm.environment.set(\"City\",\"Hyderabad\");//Environment variable\r",
+                            "\r",
+                            "pm.globals.set(\"global_var2\",\"global-2\");//Global variable"
+                        ],
+                        "type": "text/javascript"
+                    }
+                }
+            ],
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{Base_URL}}?q={{City}}&APPID={{global_api_key}}&units=metric",
+                    "host": [
+                        "{{Base_URL}}"
+                    ],
+                    "query": [
+                        {
+                            "key": "q",
+                            "value": "{{City}}"
+                        },
+                        {
+                            "key": "APPID",
+                            "value": "{{global_api_key}}"
+                        },
+                        {
+                            "key": "units",
+                            "value": "metric"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "getcitybyId",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{Base_URL}}?id=1261481&appid={{global_api_key}}",
+                    "host": [
+                        "{{Base_URL}}"
+                    ],
+                    "query": [
+                        {
+                            "key": "id",
+                            "value": "1261481"
+                        },
+                        {
+                            "key": "appid",
+                            "value": "{{global_api_key}}"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "getWeatherLatLon",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{Base_URL}}?lat=28.61&lon=77.20&appid={{global_api_key}}",
+                    "host": [
+                        "{{Base_URL}}"
+                    ],
+                    "query": [
+                        {
+                            "key": "lat",
+                            "value": "28.61"
+                        },
+                        {
+                            "key": "lon",
+                            "value": "77.20"
+                        },
+                        {
+                            "key": "appid",
+                            "value": "{{global_api_key}}"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "getbyLang",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "{{Base_URL}}?id=524901&lang=fr&appid={{global_api_key}}",
+                    "host": [
+                        "{{Base_URL}}"
+                    ],
+                    "query": [
+                        {
+                            "key": "id",
+                            "value": "524901"
+                        },
+                        {
+                            "key": "lang",
+                            "value": "fr"
+                        },
+                        {
+                            "key": "appid",
+                            "value": "{{global_api_key}}"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        }
+    ],
+    "event": [
+        {
+            "listen": "prerequest",
+            "script": {
+                "type": "text/javascript",
+                "exec": [
+                    ""
+                ]
+            }
+        },
+        {
+            "listen": "test",
+            "script": {
+                "type": "text/javascript",
+                "exec": [
+                    ""
+                ]
+            }
+        }
+    ],
+    "variable": [
+        {
+            "key": "apikey",
+            "value": "",
+            "type": "string"
+        }
+    ]
+}
+
+QA_Environment.postman:-
+{
+    "id": "8ad64719-f48d-4ff1-a32a-81d19f31c5d6",
+    "name": "QA_Environment",
+    "values": [
+        {
+            "key": "Base_URL",
+            "value": "",
+            "type": "default",
+            "enabled": true
+        },
+        {
+            "key": "apikey_env",
+            "value": "",
+            "type": "default",
+            "enabled": true
+        },
+        {
+            "key": "BaseURLDemo",
+            "value": "",
+            "type": "default",
+            "enabled": true
+        },
+        {
+            "key": "city",
+            "value": "",
+            "type": "any",
+            "enabled": true
+        },
+        {
+            "key": "City",
+            "value": "",
+            "type": "any",
+            "enabled": true
+        },
+        {
+            "key": "global_var1",
+            "value": "",
+            "type": "any",
+            "enabled": true
+        }
+    ],
+    "_postman_variable_scope": "environment",
+    "_postman_exported_at": "2023-12-14T11:15:02.240Z",
+    "_postman_exported_using": "Postman/10.21.2"
+}
+
